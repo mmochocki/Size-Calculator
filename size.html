@@ -5,18 +5,32 @@
     <title>Size Calculator</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     
 </head>
-<body>
+<body ng-app>
    <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<div class="row">
+			<div class="row centerClass">
 				<div class="col-md-6">
-				a
+                   <div class="col-md-6">
+                        <p style="margin-left:70%; padding: 10px;">
+                            Wysokość:</br>
+                            Szerokość:</br>
+                            Długość:
+                        </p>
+                   </div>
+                   <div class="col-md-6">
+                       <input type="number" ng-model="wysokosc" id="w"></br>
+				       <input type="number" ng-model="szerokosc" id="sz"></br>
+				       <input type="number" ng-model="dlugosc" id="d">
+                   </div>
+                        
 				</div>
 				<div class="col-md-6">
-				b
+                    <h3>Objętość: {{wysokosc * szerokosc * dlugosc}} jed3</h3>
+				    
 				</div>
 			</div>
 		</div>
