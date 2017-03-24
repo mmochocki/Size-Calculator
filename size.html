@@ -7,36 +7,55 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     
+    
+    
+    
 </head>
-<body ng-app>
+<body ng-app="myApp" ng-controller="myCtrl">
    <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="row centerClass">
-				<div class="col-md-6">
-                   <div class="col-md-6">
-                        <p style="margin-left:70%; padding: 10px;">
-                            Wysokość:</br>
-                            Szerokość:</br>
-                            Długość:
-                        </p>
-                   </div>
-                   <div class="col-md-6">
-                       <input type="number" ng-model="wysokosc" id="w"></br>
-				       <input type="number" ng-model="szerokosc" id="sz"></br>
-				       <input type="number" ng-model="dlugosc" id="d">
-                   </div>
-                        
-				</div>
-				<div class="col-md-6">
-                    <h3>Objętość: {{wysokosc * szerokosc * dlugosc}} jed3</h3>
-				    
-				</div>
+                <div class="col-md-12 margins">   
+                    
+                    <select ng-model="selectedName" ng-options="x for x in names">
+                    </select>
+                    
+                    
+                </div>			
+                    <div class="col-md-6">
+                       <div class="col-md-6">
+                            <p style="margin-left:70%; padding: 10px;" id="pBryla">
+                                
+                               Wysokość:</br>
+                               Szerokość:</br>
+                               Długość:</br>
+                            </p>
+                       </div>
+                       <div class="col-md-6">
+                           <input type="number" ng-model="wysokosc" id="w"></br>
+                           <input type="number" ng-model="szerokosc" id="sz"></br>
+                           <input type="number" ng-model="dlugosc" id="d">
+                       </div>
+
+                    </div>
+                    <div class="col-md-6 ">
+                       
+                        <h3>Objętość: {{wysokosc * szerokosc * dlugosc}} cm3</h3>
+
+                    </div>
 			</div>
 		</div>
 	</div>
 </div>
+  
+ <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+                $scope.names = ["Walec", "Bryła"];
+        });
+</script>    
+  
    
-     
 </body>
 </html>
